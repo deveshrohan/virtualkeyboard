@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Virtual Keyboard</title>
+
+	<!-- jQuery (required) & jQuery UI + theme (optional) -->
+	<link href="docs/css/jquery-ui.min.css" rel="stylesheet">
+
+	<script src="docs/js/jquery-latest-slim.min.js"></script>
+	<script src="docs/js/jquery-migrate-3.1.0.min.js"></script>
+	<script src="docs/js/jquery-ui-custom.min.js"></script>
+
+	<!-- keyboard widget css & script (required) -->
+	<link href="css/keyboard.css" rel="stylesheet">
+	<script src="js/jquery.keyboard.js"></script>
+
+	<!-- keyboard extensions (optional) -->
+	<script src="js/jquery.mousewheel.js"></script>
+	<script src="js/jquery.keyboard.extension-typing.js"></script>
+	<script src="js/jquery.keyboard.extension-autocomplete.js"></script>
+	<script src="js/jquery.keyboard.extension-caret.js"></script>
+
+	<!-- demo only -->
+	<link rel="stylesheet" href="docs/css/bootstrap.min.css">
+	<link rel="stylesheet" href="docs/css/font-awesome.min.css">
+	<link href="docs/css/demo.css" rel="stylesheet">
+	<link href="docs/css/tipsy.css" rel="stylesheet">
+	<link href="docs/css/prettify.css" rel="stylesheet">
+	<script src="docs/js/bootstrap.min.js"></script>
+	<script src="docs/js/demo.js"></script>
+	<script src="docs/js/jquery.tipsy.min.js"></script>
+	<script src="docs/js/prettify.js"></script> <!-- syntax highlighting -->
+</head>
+<body>
+
+
+
+<div id="page-wrap">
+	<h5>
+		Click inside the input or textarea to open the keyboard
+	</h5>
+
+
+	<div class="block" id="autocomplete">
+		<h2>
+			<span class="tooltip-tipsy">QWERTY Text</span>
+		</h2>
+		<input id="text" type="text" placeholder=" Enter something...">
+		<br>
+	</div>
+
+	<div class="block" id="random1">
+		<h2>
+			<span class="tooltip-tipsy">Random 1</span>
+		</h2>
+		<textarea id="alpha"></textarea>
+	</div>
+	
+	<div class="block">
+		<h2>
+			<span class="tooltip-tipsy" title="Click, then scroll down to see this code">Custom: iPad</span>
+		</h2>
+		<textarea id="ipad"></textarea>
+		<br>
+	</div>
+
+
+</div>
+
+</body></html>
