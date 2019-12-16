@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Virtual Keyboard Basic Demo</title>
+	<title>Keyboard Analysis for OS Project</title>
 
 	<!-- demo -->
 	<link href="docs/css/bootstrap.min.css" rel="stylesheet">
@@ -27,8 +27,9 @@
 	<script>
 		$(function(){
 			$('#qwerty').keyboard({
+			usePreview: false,
 		useCombos: false,
-		autoAccept: false,
+		autoAccept: true,
 		layout: 'qwerty',
 		display: {
 			del: '\u2326:Delete',
@@ -40,8 +41,9 @@
 		
 		$(function(){
 			$('#alpha').keyboard({
+			usePreview: false,
 		useCombos: false,
-		autoAccept: false,
+		autoAccept: true,
 		layout: 'alpha',
 		display: {
 			del: '\u2326:Delete',
@@ -53,36 +55,62 @@
 		
 		$(function(){
 			$('#random').keyboard({
-		useCombos: false,
-		autoAccept: false,
-		layout: 'custom',
-		customLayout: {
-			'normal': [
-				'` 1 2 3 4 5 6 7 8 9 0 - = {del} {b}',
-				'{tab} a s d f g h j k l p [ ] \\',
-				'q w e r t y u i o ; \' {enter}',
-				'{shift} z x c v b n m , . / {shift}',
-				'{accept} {space} {left} {right} {undo:Undo} {redo:Redo}'
-			],
-			'shift': [
-				'~ ! @ # $ % ^ & * ( ) _ + {del} {b}',
-				'{tab} Q W E R T Y U I O P { } |',
-				'A S D F G H J K L : " {enter}',
-				'{shift} Z X C V B N M < > ? {shift}',
-				'{accept} {space} {left} {right} {undo:Undo} {redo:Redo}'
-			]
-		},
-		display: {
-			del: '\u2326:Delete',
-			redo: '↻',
-			undo: '↺'
-		}
-	});
+			usePreview: false,
+			useCombos: false,
+			autoAccept: true,
+			layout: 'custom',
+			customLayout: {
+				'normal': [
+					'` 1 2 3 4 5 6 7 8 9 0 - = {del} {b}',
+					'{tab} a s d f g h j k l p [ ] \\',
+					'q w e r t y u i o ; \' {enter}',
+					'{shift} z x c v b n m , . / {shift}',
+					'{accept} {space} {left} {right} {undo:Undo} {redo:Redo}'
+				],
+				'shift': [
+					'~ ! @ # $ % ^ & * ( ) _ + {del} {b}',
+					'{tab} Q W E R T Y U I O P { } |',
+					'A S D F G H J K L : " {enter}',
+					'{shift} Z X C V B N M < > ? {shift}',
+					'{accept} {space} {left} {right} {undo:Undo} {redo:Redo}'
+				]
+			},
+			display: {
+				del: '\u2326:Delete',
+				redo: '↻',
+				undo: '↺'
+			}
+			});
 		});
+	
+	
+	$(function() {
+		$('input').on("input", checkSpeed);
+		});
+	
+	var iLastTime = 0;
+            var iTime = 0;
+            var iTotal = 0;
+            var iKeys = 0;
+
+            function checkSpeed() {
+                iTime = new Date().getTime();
+
+                if (iLastTime != 0) {
+                    iKeys++;
+                    iTotal += iTime - iLastTime;
+                    $('#CPM').html(Math.round(iKeys / iTotal * 6000, 2));
+                }
+
+                iLastTime = iTime;
+            }
+	
 	</script>
 </head>
 <body>
-
+	<div id="page">
+		<h3> <b> <u>KEYBOARD ANALYSIS FOR OS PROJECT</u></b> </h3>
+	
 	<div id="page-wrap"> <!-- wrapper only needed to center the input -->
 
 		<!-- keyboard input -->
@@ -106,10 +134,20 @@
 		<h2>
 			<span class="tooltip-tipsy">Random</span>
 		</h2>
-		<input id="random" type="text" placeholder=" Enter something...">
+		<input id="random" type="text" placeholder=" Enter something... " >
 		<br>
 	</div>
+	
+	<br />
+	<br />
+	<br />
+	<br /><br />
+	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
+	<p>
+        <span class="label">CPM</span>
+        <span id="CPM">0</span>
+    </p>
 	</div> <!-- End wrapper -->
 
 </body>
