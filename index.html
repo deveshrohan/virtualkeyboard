@@ -40,20 +40,6 @@
 		});
 		
 		$(function(){
-			$('#alpha').keyboard({
-			usePreview: false,
-		useCombos: false,
-		autoAccept: true,
-		layout: 'alpha',
-		display: {
-			del: '\u2326:Delete',
-			redo: '↻',
-			undo: '↺'
-		}
-	});
-		});
-		
-		$(function(){
 			$('#random').keyboard({
 			usePreview: false,
 			useCombos: false,
@@ -62,16 +48,46 @@
 			customLayout: {
 				'normal': [
 					'` 1 2 3 4 5 6 7 8 9 0 - = {del} {b}',
-					'{tab} a s d f g h j k l p [ ] \\',
-					'q w e r t y u i o ; \' {enter}',
-					'{shift} z x c v b n m , . / {shift}',
+					'{tab} n y s b l q v p u o [ ] \\',
+					'd k c i h x j a e ; \' {enter}',
+					'{shift} t m r f z g w , . / {shift}',
 					'{accept} {space} {left} {right} {undo:Undo} {redo:Redo}'
 				],
 				'shift': [
 					'~ ! @ # $ % ^ & * ( ) _ + {del} {b}',
-					'{tab} Q W E R T Y U I O P { } |',
-					'A S D F G H J K L : " {enter}',
-					'{shift} Z X C V B N M < > ? {shift}',
+					'{tab} N Y S B L Q V P U O { } |',
+					'D K C I H X J A E : " {enter}',
+					'{shift} T M R F Z G W < > ? {shift}',
+					'{accept} {space} {left} {right} {undo:Undo} {redo:Redo}'
+				]
+			},
+			display: {
+				del: '\u2326:Delete',
+				redo: '↻',
+				undo: '↺'
+			}
+			});
+		});
+		
+		$(function(){
+			$('#solution2').keyboard({
+			usePreview: false,
+			useCombos: false,
+			autoAccept: true,
+			layout: 'custom',
+			customLayout: {
+				'normal': [
+					'` 1 2 3 4 5 6 7 8 9 0 - = {del} {b}',
+					'{tab} c h t r v q u a x j [ ] \\',
+					'k g d p l e y f w ; \' {enter}',
+					'{shift} s n m z b o i , . / {shift}',
+					'{accept} {space} {left} {right} {undo:Undo} {redo:Redo}'
+				],
+				'shift': [
+					'~ ! @ # $ % ^ & * ( ) _ + {del} {b}',
+					'{tab} C H T R V Q U A X J { } |',
+					'K G D P L E Y F W : " {enter}',
+					'{shift} S N M Z B O I < > ? {shift}',
 					'{accept} {space} {left} {right} {undo:Undo} {redo:Redo}'
 				]
 			},
@@ -124,30 +140,19 @@
 	
 	<div class="block">
 		<h2>
-			<span class="tooltip-tipsy">Alphabetic</span>
+			<span class="tooltip-tipsy">Solution 1</span>
 		</h2>
-		<input id="alpha" type="text" placeholder=" Enter something...">
+		<input id="random" type="text" placeholder=" Enter something...">
 		<br>
 	</div>
 	
 	<div class="block">
 		<h2>
-			<span class="tooltip-tipsy">Random</span>
+			<span class="tooltip-tipsy">Solution 2</span>
 		</h2>
-		<input id="random" type="text" placeholder=" Enter something... " >
+		<input id="solution2" type="text" placeholder=" Enter something... " >
 		<br>
 	</div>
-	
-	<br />
-	<br />
-	<br />
-	<br /><br />
-	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-
-	<p>
-        <span class="label">CPM</span>
-        <span id="CPM">0</span>
-    </p>
 	</div> <!-- End wrapper -->
 
 </body>
