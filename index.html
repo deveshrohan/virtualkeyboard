@@ -98,6 +98,36 @@
 			}
 			});
 		});
+		
+		$(function(){
+			$('#solution3').keyboard({
+			usePreview: true,
+			useCombos: false,
+			autoAccept: true,
+			layout: 'custom',
+			customLayout: {
+				'normal': [
+					'` 1 2 3 4 5 6 7 8 9 0 - = {del} {b}',
+					'{tab} q x g u j v c h k b [ ] \\',
+					'z e a o f s t y r ; \' {enter}',
+					'{shift} w p i m l n d , . / {shift}',
+					'{accept} {space} {left} {right} {undo:Undo} {redo:Redo}'
+				],
+				'shift': [
+					'~ ! @ # $ % ^ & * ( ) _ + {del} {b}',
+					'{tab} Q X G U J V C H K B { } |',
+					'Z E A O F S T Y R : " {enter}',
+					'{shift} W P I M L N D < > ? {shift}',
+					'{accept} {space} {left} {right} {undo:Undo} {redo:Redo}'
+				]
+			},
+			display: {
+				del: '\u2326:Delete',
+				redo: '↻',
+				undo: '↺'
+			}
+			});
+		});
 	
 	
 	$(function() {
@@ -151,6 +181,14 @@
 			<span class="tooltip-tipsy">Solution 2</span>
 		</h2>
 		<input id="solution2" type="text" placeholder=" Enter something... " >
+		<br>
+	</div>
+	
+	<div class="block">
+		<h2>
+			<span class="tooltip-tipsy">Solution 3</span>
+		</h2>
+		<input id="solution3" type="text" placeholder=" Enter something... " >
 		<br>
 	</div>
 	</div> <!-- End wrapper -->
